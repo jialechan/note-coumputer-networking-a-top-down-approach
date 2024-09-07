@@ -224,4 +224,31 @@ cookie技术有4个组件：
 
 装在Internet公网的web缓存器：通过使用**内容分发网络**（Content Distribution Network, CDN） , Web缓存器正在因特网中发挥着越来越重要的作用。
 
-
+### 2.2.6 条件GET方法
+首先，一个代理缓存器（proxycache）代表一个请求浏览器，向某Web服务器发送一个请求报文
+```http
+GET /fruit/kiwi.gif HTTP/1.1
+Host: www.exotiquecuisine.com
+```
+其次，该Web服务器向缓存器发送具有被请求的对象的响应报文:
+```http
+HTTP/1.1 200 OK
+Date: Sat. 3 Oct 2015 15:39:29
+Server: Apache/1.3.0 (Unix)
+Last-Modified: Wed, 9 Sep 2015 09:23:24
+Content-Type: image/gif
+(data data data data data...)
+```
+下次访问Web服务器，带一个首部行，key为If-modified-since，值为上次返回的Last-Modified返回的值
+```http
+GET /fruit/kiwi.gif HTTP/1.1
+Host: www.exotiquecuisine.com
+If-modified-since: Wed, 9 Sep 2015 09:23:24
+```
+Web服务发现没有改变，返回304和空的body
+```http
+HTTP/1.1 304 Not Modified
+Date: Satf 10 Oct 2015 15:39:29
+Server: Apache/1 3 0 (Unix)
+(empty entity body)
+```
