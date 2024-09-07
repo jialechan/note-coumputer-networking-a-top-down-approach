@@ -208,5 +208,20 @@ HTTP使用TCP作为它的支撑运输协议，HTTP是一个无状态协议(state
 <br/>
 <img width="400" alt="image" src="https://github.com/user-attachments/assets/55b33fe7-1232-4df6-9d3a-240d241dbe6a">    
 
+### 2.2.4用户与服务器的交互：cookie
+cookie技术有4个组件：
+1. 在HTTP响应报文中的一个cookie首部行；
+2. 在HTTP请求报文中的一个cookie首部行；
+3. 在用户端系统中保留有一个cookie文件，并由用户的浏览器进行管理；
+4. 位于Web站点的一个后端数据库。
+
+<img width="500" alt="image" src="https://github.com/user-attachments/assets/b6aa5622-5e81-4256-a310-a95a5ff524a1">  
+
+### 2.2.5 Web缓存
+局域网内的web缓存器：在局域网安装，局域网内的浏览器要预先设置指向局域网web缓存器（这样的话感觉用得比较少）。   
+
+<img width="300" alt="image" src="https://github.com/user-attachments/assets/ad256475-aceb-42af-a15c-09400dde0f87">  
+
+装在Internet公网的web缓存器：通过使用**内容分发网络**（Content Distribution Network, CDN） , Web缓存器正在因特网中发挥着越来越重要的作用。
 
 
