@@ -188,3 +188,25 @@ OSI参考模型比因特网协议多了两个层，即**表示层**和**会话�
 
 ### 2.1.6 本书涉及的网络应用
 Web 文件传输、电子邮件、目录服务(DNS)、流式视频和P2P。
+
+## 2.2 Web 和 HTTP
+### 2.2.1 HTTP 概况
+HTTP使用TCP作为它的支撑运输协议，HTTP是一个无状态协议(stateless protocol)。
+
+### 2.2.2 非持续连接和持续连接
+1. 采用非持续连接的HTTP：每次请求完都会断开
+2. 采用持续连接的HTTP：会复用链接
+
+### 2.2.3 HTTP报文格式
+1. HTTP请求报文
+<img width="300" alt="image" src="https://github.com/user-attachments/assets/aa69bae3-9e3e-46d7-9567-ae8a05f7a050">   
+<br/>
+<img width="400" alt="image" src="https://github.com/user-attachments/assets/43df06e0-141e-409a-9d85-f25eba6ed7e5">       
+
+2. HTTP响应报文
+<img width="300" alt="image" src="https://github.com/user-attachments/assets/e1e84302-044c-4e74-80a3-f71798f94b3c">   
+<br/>
+<img width="400" alt="image" src="https://github.com/user-attachments/assets/55b33fe7-1232-4df6-9d3a-240d241dbe6a">    
+
+
+
