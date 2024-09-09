@@ -283,4 +283,14 @@ To: bob@hamburger.edu
 Subject: Searching for the meaning of life.
 ```
 
+### 2.3.4邮件访问协议
+![image](https://github.com/user-attachments/assets/8c72b5ac-fdca-4611-9787-98ac5de9b3c6)
+
+1. POP3：一个极为简单的邮件访问协议
+2. IMAP：可以管理邮件和文件夹关系等比较复杂的协议
+3. 基于Web的电子邮件：有浏览器作为用户代理
+
+
+
+
 
