@@ -314,4 +314,18 @@ DNS还提供了一些重要的服务：
 2. DNS缓存
 DNS服务可以缓存域名解析到本地存储器而不必每次都要请求查询。缓存通常2天过期时间。
 
+### 2.4.3 DNS记录和报文
+了资源记录(Resource Record, RR), RR提供了主机名到IP地址的映射。资源记录是一个包含了下列字段的4元组:
+```
+(Name, Value, Type, TTL)
+```
+Name和Value的值取决于Type:    
+* 如果Type = A,则Name是主机名，Value是该主机名对应的IP地址。因此，一条类型为A的资源记录提供了标准的主机名到IP地址的映射。例如(relay1.bar.foo.com, 145. 37.93. 126, A)就是一条类型 A 记录。
+* 如果Type = NS,则Name是个域(如foo. com),而Value是个知道如何获得该域中主机IP地址的权威DNS服务器的主机名。这个记录用于沿着查询链来路由DNS查询。例如(foo.com, dns.foo.com, NS)就是一条类型为NS的记录。
+* 如果Type = CNAME，则Value是别名为Name的主机对应的规范主机名。该记录能够向査询的主机提供一个主机名对应的规范主机名，例如(foo.com, relay1.bar.foo.com, CNAME)就是一条 CNAME 类型的记录。
+* 如果Type = MX,则Value是个别名为Name的邮件服务器的规范主机名。举例来说，(foo.com, mail.bar.foo.com, MX)就是一条MX记录。MX记录允许邮件服务器主机名具有简单的别名。值得注意的是，通过使用MX记录，一个公司的邮件服务器和其他服务器(如它的Web服务器)可以使用相同的别名。为了获得邮件服务器的规范主机名，DNS客户应当请求一条MX记录；而为了获得其他服务器的规范主机名，DNS客户应当请求CNAME记录。
+
+如果一台DNS服务器是用于某特定主机名的权威DNS服务器，那么该DNS服务器会有一条包含用于该主机名的类型A记录(即使该DNS服务器不是其权威DNS服务器，它也可能在缓存中包含有一条类型A记录)。   
+
+如果服务器不是用于某主机名的权威服务器,那么该服务器将包含一条类型NS记录，该记录对应于包含主机名的域；它还将包括一条类型A记录，该记录提供了在NS记录的Value字段中的DNS服务器的IP地址。举例来说，假设一台edu TLD服务器不是主机gaia.cs.umass.edu的权威DNS服务器，则该服务器将包含一条包括主机cs.umass.edu的域记录，如 (umass.edu, dns.umass.edu, NS)该edu TLD服务器还将包含一条类型A记录,如(dns.umass.edu, 128.119.40.111 A), 该记录将名字dns. umass. edu映射为一个IP地址。
 
