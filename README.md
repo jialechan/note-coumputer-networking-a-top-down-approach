@@ -283,14 +283,22 @@ To: bob@hamburger.edu
 Subject: Searching for the meaning of life.
 ```
 
-### 2.3.4邮件访问协议
+### 2.3.4 邮件访问协议
 ![image](https://github.com/user-attachments/assets/8c72b5ac-fdca-4611-9787-98ac5de9b3c6)
 
 1. POP3：一个极为简单的邮件访问协议
 2. IMAP：可以管理邮件和文件夹关系等比较复杂的协议
 3. 基于Web的电子邮件：有浏览器作为用户代理
 
+## 2.4 DNS: 因特网的目录服务
+### 2.4.1 DNS提供的服务
+DNS是：   
+1. 一个由分层的DNS服务器（DNS server）实现的分布式数据库；
+2. 一个使得主机能够查询分布式数据库的应用层协议。
 
-
+DNS还提供了一些重要的服务：
+* **主机别名**（host aliasing）：有着复杂主机名的主机能拥有一个或者多个别名。
+* **邮件服务器别名**（mail server aliasing）：MX记录允许一个公司的邮件服务器和Web服务器使用相同（别名化的）的主机名；
+* **负载分配**（load distribution）：因为客户通常总是向IP地址排在最前面的服务器发送HTTP请求报文，所以DNS就在所有这些冗余的Web服务器之间循环分配了负载。
 
 
