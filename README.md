@@ -307,6 +307,8 @@ DNS还提供了一些重要的服务：
 * 根DNS服务器
 * 顶级域(DNS)服务器
 * 权威DNS服务器
+
+
 ![image](https://github.com/user-attachments/assets/a274ca62-21a3-4ee7-9a06-8a22ef57f7d8)
 
 2. DNS缓存
