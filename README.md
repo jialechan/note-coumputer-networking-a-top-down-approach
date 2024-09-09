@@ -261,4 +261,9 @@ Server: Apache/1 3 0 (Unix)
 
 ![image](https://github.com/user-attachments/assets/c97af875-92f5-4545-a83e-eee520fe63bc)
 
+### 2.3.2 SMTP与HTTP的对比
+1. HTTP主要是一个**拉协议**(pull protocol), SMTP基本上是一个**推协议**(push protocol）。
+2. SMTP要求每个报文（包括它们的体）采用7比特ASCII码格式。如果某报文包含了非7比特ASCII字符（如具有重音的法文字符）或二进制数据（如图形文件），则该报文必须按照7比特ASCII码进行编码。HTTP数据则不受这种限制
+3. 重要区别是如何处理一个既包含文本又包含图形（也可能是其他媒体类型）的文档。HTTP把每个对象封装到它自己的HTTP响应报文中，而SMTP则把所有报文对象放在一个报文之中。
+
 
