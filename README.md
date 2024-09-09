@@ -252,3 +252,13 @@ Date: Satf 10 Oct 2015 15:39:29
 Server: Apache/1 3 0 (Unix)
 (empty entity body)
 ```
+
+## 2.3 因特网中的电子邮件
+<img width="500" alt="image" src="https://github.com/user-attachments/assets/d280b4f7-f238-4371-94a4-31c6025aac90">
+
+### 2.3.1 SMTP
+![image](https://github.com/user-attachments/assets/2adad483-b5d1-424d-8ada-e35fa9c0567b)    
+
+![image](https://github.com/user-attachments/assets/c97af875-92f5-4545-a83e-eee520fe63bc)
+
+
