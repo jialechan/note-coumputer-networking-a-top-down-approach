@@ -301,4 +301,15 @@ DNS还提供了一些重要的服务：
 * **邮件服务器别名**（mail server aliasing）：MX记录允许一个公司的邮件服务器和Web服务器使用相同（别名化的）的主机名；
 * **负载分配**（load distribution）：因为客户通常总是向IP地址排在最前面的服务器发送HTTP请求报文，所以DNS就在所有这些冗余的Web服务器之间循环分配了负载。
 
+### 2.4.2 DNS工作机理概述
+1. 分布式、层次数据库
+![image](https://github.com/user-attachments/assets/2a1c2f4f-89ec-400c-a109-f401b34dc084)
+* 根DNS服务器
+* 顶级域(DNS)服务器
+* 权威DNS服务器
+![image](https://github.com/user-attachments/assets/a274ca62-21a3-4ee7-9a06-8a22ef57f7d8)
+
+2. DNS缓存
+DNS服务可以缓存域名解析到本地存储器而不必每次都要请求查询。缓存通常2天过期时间。
+
 
