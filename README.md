@@ -257,9 +257,17 @@ Server: Apache/1 3 0 (Unix)
 <img width="500" alt="image" src="https://github.com/user-attachments/assets/d280b4f7-f238-4371-94a4-31c6025aac90">
 
 ### 2.3.1 SMTP
+1. Alice调用她的邮件代理程序并提供Bob的邮件地址（例如bob® someschool.edu）,撰写报文，然后指示用户代理发送该报文。
+2. Alice的用户代理把报文发给她的邮件服务器，在那里该报文被放在报文队列中。
+3. 运行在Alice的邮件服务器上的SMTP客户端发现了报文队列中的这个报文，它就创建一个到运行在Bob的邮件服务器上的SMTP服务器的TCP连接。
+4. 在经过一些初始SMTP握手后，SMTP客户通过该TCP连接发送Alice的报文。
+5. 在Bob的邮件服务器上，SMTP的服务器端接收该报文。Bob的邮件服务器然后将该报文放入Bob的邮箱中。
+6. 在Bob方便的时候，他调用用户代理阅读该报文。
 ![image](https://github.com/user-attachments/assets/2adad483-b5d1-424d-8ada-e35fa9c0567b)    
 
-![image](https://github.com/user-attachments/assets/c97af875-92f5-4545-a83e-eee520fe63bc)
+![image](https://github.com/user-attachments/assets/c97af875-92f5-4545-a83e-eee520fe63bc)   
+
+**特别地：SMTP 一般不使用中间邮件服务器发送邮件，即使这两个邮件服务器位于地球的两端也是这样**。
 
 ### 2.3.2 SMTP与HTTP的对比
 1. HTTP主要是一个**拉协议**(pull protocol), SMTP基本上是一个**推协议**(push protocol）。
