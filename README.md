@@ -360,5 +360,71 @@ DNS只有这两种报文，并且，查询和回答报文有着相同的格式�
 2. 集群选择策略
 任何CDN部署，其核心是**集群选择策略**(cluster selection strategy),即动态地将客户定向到CDN中的某个服务器集群或数据中心的机制。一种简单的策略是指派客户到**地理上最为邻近**(geographically closest)的集群。为了基于当前流量条件为客户决定最好的集群，CDN能够对其集群和客户之间的时延和丢包性能执行周期性的**实时测量**(real-time measurement)°
 
+## 2.7 套接字编程：生成网络应用
+### 2.7.1 UDP套接字编程
+![image](https://github.com/user-attachments/assets/85b501c7-9a5e-4088-adfe-c6d1ca254663)
+```python
+# UDPClient.py
+from socket import *
+serverName = 'hostname'
+serverPort = 12000
+clientSocket = socket(AF_INET, SOCK_DGRAM)
+message = raw_input('Input lowercase sentence:')
+clientSocket.sendto(message.encode(),(serverName, serverPort))
+modifiedMessage, serverAddress = clientSocket.recvfrom(2048)
+print(modifiedMessage.decode())
+clientSocket.close()
+```
+```python
+UDPServer.py
+from socket import *
 
+serverPort = 12000
+serverSocket = socket(AF_INET, SOCK_DGRAM)
+serverSocket.bind(('', serverPort))
+print ("The server is ready to receive...")
+
+while True: 
+    message, clientAddress = serverSocket.recvfrom(2048)
+    print(clientAddress)
+    modifiedMessage = message.decode().upper()
+    serverSocket.sendto(modifiedMessage.encode(), clientAddress)
+```
+### 2.7.2 TCP套接字编程
+![image](https://github.com/user-attachments/assets/c44e9363-89c7-4388-bc1b-78527b6419db)    
+![image](https://github.com/user-attachments/assets/b396c649-c9d2-4b10-b0e9-3e62b7836ae0)   
+
+```python
+# TCPClient.py
+from socket import *
+serverName = 'servername'
+serverPort = 12000
+clientSocket = socket(AF_INETr SOCK_STREAM)
+clientSocket.connect((serverName, serverPort))
+sentence = raw_input('Input lowercase sentence:')
+clientsocket.send(sentence.encode())
+modifiedSentence = clientsocket.recv(1024)
+print('From Server: ', modifiedSentence.decode())
+dientSocket.close()
+```
+
+```python
+# TCPServer.py
+from socket import *
+serverPort = 12000
+serverSocket = socket(AF_INET,SOCK_STREAM)
+serverSocket.bind(('', serverPort))
+serverSocket.listen(1)
+print(FThe server is ready to receive')
+while True:
+   connectionSocket, addr = serverSocket.accept()
+   sentence = connectionsocket.recv(1024).decode()
+   capitalizedSentence = sentence.upper()
+   connectionsocket.send(capitalizedSentence.encode())
+   connectionSocket.close ()
+```
+
+
+## 2.8 小结
+在本章中，我们学习了网络应用的概念和实现两个方面。我们学习了被因特网应用普遍采用的客户-服务器模式，并且看到了该模式在HTTP SMTP POP3和DNS等协议中的使用。我们已经更为详细地学习了这些重要的应用层协议以及与之对应的相关应用(Web 文件传输、电子邮件和DNS)O我们也已学习了 P2P体系结构以及它如何应用在许多应用程序中。我们也学习了流式视频，以及现代视频分发系统是如何利用CDN的。对于面向连接的 TCP）和无连接的 UDP）端到端传输服务，我们走马观花般地学习了套接字的使用。至此，我们在分层的网络体系结构中的向下之旅已经完成了第一步
 
