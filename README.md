@@ -431,5 +431,6 @@ while True:
 # 运输层
 ## 3.1 概述和运输层服务
 ![image](https://github.com/user-attachments/assets/f6ec3dfb-eb20-4cee-b424-81c4d0302c98)
-
+### 3.1.1 运输层和网络层的关系
+网络层提供了主机之间的逻辑通信，而运输层为运行在不同主机上的进程之间提供了逻辑通信。
 
