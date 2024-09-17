@@ -484,3 +484,18 @@ UDP首部只有4个字段，每个字段由两个字节组成。长度字段指�
     * 重传
 <img src="https://github.com/user-attachments/assets/afeca2f6-f32e-4b80-be2c-6259d6de040a" width="700px"/>
 
+rdt2.0有个严重问题，就是没有考虑ACK或NAK分组受损的可能性。解决这个新问题的一个简单方法（几乎所有现有的数据传输协议中，包括TCP,都采用了这种方法）是在数据分组中添加一新字段，让发送方对其数据分组编号，即将发送数据分组的**序号**（sequence number）放在该字段。于是，接收方只需要检查序号即可确定收到的分组是否一次重传。   
+
+rdt2.1引入了序号：   
+<img width="700" alt="image" src="https://github.com/user-attachments/assets/2a37c8eb-0807-4e21-98c3-886c9e5cc1e2">
+<img width="700" alt="image" src="https://github.com/user-attachments/assets/df841e7a-6ce7-4ba0-ad9d-3a79dd4b4563">   
+ 
+rdt2.2去掉了NAK，使用ACK带编号来解决：   
+<img width="700" alt="image" src="https://github.com/user-attachments/assets/211ad274-80e5-4ffc-8fde-0e6465cc3392">   
+<img width="700" alt="image" src="https://github.com/user-attachments/assets/98cc37a9-a782-40db-ad80-2eb4e4644a86">   
+
+
+
+
+
+
