@@ -494,6 +494,14 @@ rdt2.2去掉了NAK，使用ACK带编号来解决：
 <img width="700" alt="image" src="https://github.com/user-attachments/assets/211ad274-80e5-4ffc-8fde-0e6465cc3392">   
 <img width="700" alt="image" src="https://github.com/user-attachments/assets/98cc37a9-a782-40db-ad80-2eb4e4644a86">   
 
+3. 经具有比特差错的丢包信道的可靠数据传输：rdt3.0   
+应付丢包的方法是重传，还有要确定好超时的时间，多次发送要处理好晚到的ACK   
+<img width="700" alt="image" src="https://github.com/user-attachments/assets/bee29840-f366-4158-bc3f-cc9f9a262f7d">  
+
+<img width="661" alt="image" src="https://github.com/user-attachments/assets/18d3e659-19ff-4e44-9bcf-43c1c7087a1b">   
+
+<img width="661" alt="image" src="https://github.com/user-attachments/assets/3dfb2cf1-29de-4e07-a112-e1b60cc0f55a">
+
 
 
 
