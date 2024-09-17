@@ -482,4 +482,5 @@ UDP首部只有4个字段，每个字段由两个字节组成。长度字段指�
     * 差错检测
     * 接收方反馈
     * 重传
+<img src="https://github.com/user-attachments/assets/afeca2f6-f32e-4b80-be2c-6259d6de040a" width="700px"/>
 
