@@ -585,8 +585,29 @@ TCP可从缓存中取出并放入报文段中的数据数量受限于**最大报
 2. Telnet: 序号和确认号的一个学习案例   
 ![image](https://github.com/user-attachments/assets/901ab87c-fdce-4d82-8000-b64166bbfd51)
 
+### 3.5.3 往返时间的估计与超时
+**1.估计往返时间**   
+在任意时刻，仅为一个已发送的但目前尚未被确认的报文段估计SampleRTT,从而产生一个接近每个RTT的新SampleRTT值。另外，TCP决不为已被重传的报文段计算SampleRTT 它仅为传输一次的报文段测量SampleRTT
+TCP维持一个SampleRTT均值（称为EstimatedRTT）。一旦获得一个新SampleRTT时，TCP就会根据下列公式来更新EstimatedRTT:
+```
+EstimatedRTT = (1-a)*EstimatedRTT + a*EstimatedRTT
+```
+a推荐值是a=0.125   
+从统计学观点讲，这种平均被称为**指数加权移动平均**（Exponential Weighted Moving Average, EWMA）。
+![image](https://github.com/user-attachments/assets/5855729e-c479-492b-9939-f0b2eaa5dd53)
 
+RTT偏差DevRTT,用于估算SampleRTT 一般会偏离EstimatedRTT的程度：
+```
+DevRTT = (1-b)*DevRtt + b*|SampleRTT-EstimatedRTT|
+```
+b的推荐值为0.25
 
+**2.设置和管理重传超时间隔**   
+超时时间应该是指为大于等于EstimatedRTT，需要在EstimatedRTT加上一定余量，这个余量就是用DevRTT评估：
+```
+TimeoutInterval = EstimatedRTT + 4 * DevRTT
+```
+推荐的初始Timeoutinterval值为1秒。同时，当出现超时后，TimeoutInterval值将加倍。
 
 
 
