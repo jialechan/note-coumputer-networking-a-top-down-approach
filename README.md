@@ -630,7 +630,8 @@ TCP发送方有3个与发送和重传有关的主要事件：从上层应用程�
 ![image](https://github.com/user-attachments/assets/d7796f18-81bd-4cd1-a624-d76b54e44314)    
 ![image](https://github.com/user-attachments/assets/9fa6b93f-db84-41b9-9f90-4f7563916726)
 
-
+**是回退N步还是选择重传**
+对TCP提岀的一种修改意见是所谓的**选择确认**(selective acknowledgment)。它允许TCP接收方有选择地确认失序报文段，而不是累积地确认最后一个正确接收的有序报文段。TCP的差错恢复机制也许最好被分类为GBN协议与SR协议的混合体。
 
 
 
