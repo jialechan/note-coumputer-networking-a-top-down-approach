@@ -633,7 +633,10 @@ TCP发送方有3个与发送和重传有关的主要事件：从上层应用程�
 **是回退N步还是选择重传**
 对TCP提岀的一种修改意见是所谓的**选择确认**(selective acknowledgment)。它允许TCP接收方有选择地确认失序报文段，而不是累积地确认最后一个正确接收的有序报文段。TCP的差错恢复机制也许最好被分类为GBN协议与SR协议的混合体。
 
-
+### 3.5.5 流量控制
+TCP为它的应用程序提供了**流量控制服务**(flow control service)以消除发送方使接收方缓存溢岀的可能性。TCP发送方也可能因为IP网络的拥塞而被遏制；这种形式的发送方的控制被称为**拥塞控制**(congestion control)。   
+TCP通过让发送方维护一个称为接收窗口(receive window)的变量来提供流量控制。通俗地说，接收窗口用于给发送方一个指示一 该接收方还有多少可用的缓存空间。   
+![image](https://github.com/user-attachments/assets/d84620e6-4d28-435d-bdee-e5ecfcc5c359)
 
 
 
