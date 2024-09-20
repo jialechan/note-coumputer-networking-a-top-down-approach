@@ -617,6 +617,10 @@ TCP发送方有3个与发送和重传有关的主要事件：从上层应用程�
 
 ![image](https://github.com/user-attachments/assets/1510213c-4f91-47a5-8797-65713071392f)
 
+**一些有趣情况**   
+![image](https://github.com/user-attachments/assets/4e665cea-3055-4abe-a5bc-a5a1b43bcb9c)
+![image](https://github.com/user-attachments/assets/85063aef-19fc-46d6-941d-4e97fc8b852a)
+
 
 
 
