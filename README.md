@@ -685,4 +685,8 @@ TCP使用下列指导性原则：
 
 <img width="402" alt="image" src="https://github.com/user-attachments/assets/bfedfeab-da92-4c31-a026-caa43d3d9c34">
 
+### 3.7.1 公平性
+* 完美情况下，即所有TCP的开始时间，RTT等参数全部相同的时候，TCP的AIMD(加性增，乘性减)算法还算是公平的，会逐步趋于平均；但是实际情况是较小RTT的TCP会拥有更大的吞吐量。
+* 由于UDP没有拥塞算法，所以对于TCP来说，UDP是不公平的，UDP会压制TCP
+* 并行TCP会占据更多的带宽比例，所以浏览器的多开TCP连接整体来说是不公平的
 
