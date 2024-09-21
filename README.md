@@ -672,3 +672,17 @@ TCP通过让发送方维护一个称为接收窗口(receive window)的变量来�
 * 端到端拥塞控制：端系统也必须通过对网络行为的观察来推断。
 * 网络辅助的拥塞控制：网络层的反馈，有直接反馈和接收方反馈，接收方反馈需要经过一个完整往返周期。
 <img width="654" alt="image" src="https://github.com/user-attachments/assets/8242bc7a-98bf-4178-b8c5-b648d98749dd">
+
+## 3.7 TCP拥塞控制
+运行在发送方的TCP拥塞控制机制跟踪变量，即拥塞窗口（congestion window)。拥塞窗口表示为`cwnd`, 它对一个TCP发送方能向网络中发送流量的速率进行了限制。   
+TCP使用下列指导性原则：   
+* 一个丢失的报文段表意味着拥塞，因此当丢失报文段时应当降低TCP发送方的速率。
+* 一个确认报文段指示该网络正在向接收方交付发送方的报文段，因此，当对先前未确认报文段的确认到达时，能够增加发送方的速率。
+* 带宽探测。逐步加快传输速度，根据ack调整速度
+
+**TCP拥塞控制算法**
+<img width="792" alt="image" src="https://github.com/user-attachments/assets/b1401910-7dcd-4746-910e-44d722e61dad">   
+
+<img width="402" alt="image" src="https://github.com/user-attachments/assets/bfedfeab-da92-4c31-a026-caa43d3d9c34">
+
+
