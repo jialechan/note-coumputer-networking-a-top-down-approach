@@ -690,9 +690,13 @@ TCP使用下列指导性原则：
 * 由于UDP没有拥塞算法，所以对于TCP来说，UDP是不公平的，UDP会压制TCP
 * 并行TCP会占据更多的带宽比例，所以浏览器的多开TCP连接整体来说是不公平的
 
+
+<img width="400" alt="image" src="https://github.com/user-attachments/assets/b3079179-db17-4dfc-9196-5dc4a061fb34">
+
+
 ### 3.7.2 明确拥塞通告：网络辅助拥塞控制
 IP和TCP的扩展方案［RFC 3168］已经提出并已经实现和部署，该方案允许网络明确向TCP发送方和接收方发出拥塞信号。这种形式的网络辅助拥塞控制称为**明确拥塞通告**(Explicit Congestion Notification, ECN）。   
 
-<img width="776" alt="image" src="https://github.com/user-attachments/assets/284b4028-4e76-451e-adba-47a54d740f68">
+<img width="400" alt="image" src="https://github.com/user-attachments/assets/284b4028-4e76-451e-adba-47a54d740f68">
 
 
