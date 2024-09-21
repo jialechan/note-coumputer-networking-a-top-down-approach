@@ -639,11 +639,20 @@ TCP通过让发送方维护一个称为接收窗口(receive window)的变量来�
 ![image](https://github.com/user-attachments/assets/d84620e6-4d28-435d-bdee-e5ecfcc5c359)
 
 ### 3.5.6 TCP连接管理
-客户中的TCP会用以下方式与服务器中的TCP建立一条TCP连接:   
+**创建**：客户中的TCP会用以下方式与服务器中的TCP建立一条TCP连接:   
 1. 第一步：客户端的TCP首先向服务器端的TCP发送一个特殊的TCP报文段。该报文段中不包含应用层数据。但是在报文段的首部中的一个标志位（即SYN比特）被置为1。因此，这个特殊报文段被称为SYN报文段。另外，客户会随机地选择一个初始序号（client_isn），并将此编号放置于该起始的TCP SYN报文段的**序号**字段中。该报文段会被封装在一个IP数据报中，并发送给服务器。
 2. 第二步：一旦包含TCP SYN报文段的IP数据报到达服务器主机，服务器会从该数据报中提取出TCP SYN报文段，为该TCP连接分配TCP缓存和变量，并向该客户TCP发送允许连接的报文段。这个允许连接的报文段也不包含应用层数据。但是，在报文段的首部却包含3个重要的信息。首先，SYN比特被置为1。其次，该TCP报文段首部的确认号字段被置为client_isn + 1。最后，服务器选择自己的初始序号（server_isn），并将其放置到TCP报文段首部的**序号**字段中。这个允许连接的报文段实际上表明了：“我收到了你发起建立连接的SYN分组，该分组带有初始序号client_isn。我同意建立该连接。我自己的初始序号是server_isn。”该允许连接的报文段被称为SYNACK报文段（SYNACK segment）。
 3. 第三步：在收到SYNACK报文段后，客户也要给该连接分配缓存和变量。客户主机则向服务器发送另外一个报文段；这最后一个报文段对服务器的允许连接的报文段进行了确认（该客户通过将值server_isn + 1放置到TCP报文段首部的**确认**字段中来完成此项工作）。因为连接已经建立了，所以该SYN比特被置为0。*该三次握手的第三个阶段可以在报文段负载中携带客户到服务器的数据*(待验证)。
-<img width="592" alt="image" src="https://github.com/user-attachments/assets/5b8034b4-edbe-4881-a927-c5096afef45e">
+<img width="400" alt="image" src="https://github.com/user-attachments/assets/5b8034b4-edbe-4881-a927-c5096afef45e">
 
+**关闭**：参与一条TCP连接的两个进程中的任何一个都能终止该连接。   
+客户应用进程发出一个关闭连接命令。这会引起客户TCP向服务器进程发送一个特殊的TCP报文段。这个特殊的报文段让其首部中的一个标志位即FIN比特被设置为1。当服务器接收到该报文段后，就向发送方回送一个确认报文段。然后，服务器发送它自己的终止报文段，其FIN比特被置为1。最后，该客户对这个服务器的终止报文段进行确认。此时，在两台主机上用于该连接的所有资源都被释放了。   
+<img width="400" alt="image" src="https://github.com/user-attachments/assets/13a0462a-d98c-484b-9ee1-9171e99549fc">
+
+**TCP状态**：   
+在TIMEWAIT状态中所消耗的时间是与具体实现有关的，而典型的值是30秒、1分钟或2分钟。 经过等待后，连接就正式关闭，客户端所有资源（包括端口号）将被释放   
+<img width="400" alt="image" src="https://github.com/user-attachments/assets/c842f687-9a2a-430e-a3bd-eefaa505f3e8">
+
+<img width="400" alt="image" src="https://github.com/user-attachments/assets/30655195-9f22-4994-90a4-c502cf0b571e">
 
 
