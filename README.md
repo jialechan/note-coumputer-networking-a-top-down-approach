@@ -731,5 +731,21 @@ IP和TCP的扩展方案［RFC 3168］已经提出并已经实现和部署，该�
 # 4.1.2 网络服务模型
 因特网的网络层提供了单一的服务，称为**尽力而为服务**（best effort service）。不确保交付，不确保延时，不确保有序，不确保带宽，无安全性。
 
+# 4.2 路由器工作原理
+![image](https://github.com/user-attachments/assets/b814a000-40fa-4a3f-b15d-2d4fc66ab022)
+
+### 4.2.1 输入端口处理和基于目的地转发
+
+![image](https://github.com/user-attachments/assets/c605862f-51ee-431f-906c-06df3e5918e4)
+
+### 4.2.2 交换
+
+![image](https://github.com/user-attachments/assets/ddb6c8f0-42d2-4080-a956-9b083b94d8f9)
+
+### 4.2.3 输出端口处理
+
+![image](https://github.com/user-attachments/assets/460ff4c8-fd72-4a5b-aa47-a21dca828bd3)
+
+
 
 
