@@ -719,3 +719,14 @@ IP和TCP的扩展方案［RFC 3168］已经提出并已经实现和部署，该�
 * **路由选择**(routing)是指确定分组从源到目的地所采取的端到端路径的网络范围处理过程。计算这些路径的算法被称为**路由选择算法**(routing algorithm)。路由选择发生的时间尺度长得多(通常为几秒)，因此通常用软件来实现。
 
 ![image](https://github.com/user-attachments/assets/6e536cb9-3866-40d7-8c68-cabde6308a33)
+
+
+1.控制平面：传统的方法    
+一台路由器中的路由选择算法与在其他路由器中的路由选择算法通信(通过根据路由选择协议交换包含路由选择信息的路由选择报文)，以计算出它的转发表的值。   
+
+2.控制平面：SDN方法   
+下图中的控制平面方法是软件定义网络(Software-Defined Networking, SDN）的本质   
+![image](https://github.com/user-attachments/assets/dcb854b2-24a3-4fe5-86ab-e43e56671b4a)
+
+
+
