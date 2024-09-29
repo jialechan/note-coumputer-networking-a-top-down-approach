@@ -728,5 +728,8 @@ IP和TCP的扩展方案［RFC 3168］已经提出并已经实现和部署，该�
 下图中的控制平面方法是软件定义网络(Software-Defined Networking, SDN）的本质   
 ![image](https://github.com/user-attachments/assets/dcb854b2-24a3-4fe5-86ab-e43e56671b4a)
 
+# 4.1.2 网络服务模型
+因特网的网络层提供了单一的服务，称为**尽力而为服务**（best effort service）。不确保交付，不确保延时，不确保有序，不确保带宽，无安全性。
+
 
 
