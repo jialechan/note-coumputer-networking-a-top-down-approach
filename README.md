@@ -796,6 +796,25 @@ IPv4数据报中的关键字段如下：
 
 <img width="450" alt="image" src="https://github.com/user-attachments/assets/3ad8b709-7235-4d14-9962-0f81f27a6b21">   
 
-<img width="450" alt="image" src="https://github.com/user-attachments/assets/a3dca95f-85dc-413e-8d46-236ad68c29a1">   
+<img width="450" alt="image" src="https://github.com/user-attachments/assets/a3dca95f-85dc-413e-8d46-236ad68c29a1">      
+
+<img width="651" alt="image" src="https://github.com/user-attachments/assets/5b91718d-48d6-41ef-822c-227f2ebc43c7">      
+
+因特网的地址分配策略被称为**无类别域间路由选择**(Classless Inlerdomain Routing,CIDR)。在CIDR被采用之前，IP地址的网络部分被限制为长度为8、16或24比特，这是一种称为分类编址（classful addressing）的编址方案，这是因为具有8、16和24比特子网地址的子网分别被称为A、B和C类网络。   
+
+
+主机或子网最初是如何得到它们的地址：
+1. 获取一块地址：为了获取一块IP地址用于一个组织的子网内，某网络管理员也许首先会与他的ISP联系，该ISP可能会从已分给它的更大地址块中提供一些地址。
+2. 获取主机地址：动态主机配置协议（Dynamic Host Configuration, DHCP）
+<img width="450" alt="image" src="https://github.com/user-attachments/assets/0a9aaed0-2a2e-45dc-82e5-59b12393c6d2">  
+
+DHCP协议是一个4个步骤的过程，下图中，yiaddr（表示“你的因特网地址”之意)
+<img width="468" alt="image" src="https://github.com/user-attachments/assets/2753803c-c6d3-44fa-95aa-61ce1180896c">
+1. DHCP服务器发现。一台新到达的主机的首要任务是发现一个要与其交互的DHCP服务器。这可通过使用DHCP发现报文 DHCP discover message）来完成，客户在UDP分组中向端口67发送该发现报文。
+2. DHCP服务器提供。DHCP服务器收到一个DHCP发现报文时，用DHCP提供报文(DHCP offer message)向客户做出响应，该报文向该子网的所有节点广播，仍然使用IP广播地址255.255.255.255
+3. DHCP请求。新到达的客户从一个或多个服务器提供中选择一个，并向选中的服务器提供用DHCP请求报文(DHCP request mess昭e)进行响应，回显配置的参数。
+4. DHCP ACKO 月艮务器用 DHCP ACK 报文(DHCP ACK message)寸 DHCP 请求报文进行响应，证实所要求的参数
+
+
 
 
