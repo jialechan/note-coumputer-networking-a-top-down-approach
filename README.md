@@ -782,6 +782,14 @@ IPv4数据报中的关键字段如下：
 * **数据**（有效载荷）。承载TCP/UDP报文，也可以承载ICMP报文。   
 <img width="543" alt="image" src="https://github.com/user-attachments/assets/e927f1a2-d7ea-4b12-adb2-b6906f46649d">
 
+### 4.3.2 IPv4数据报分片
+并不是所有链路层协议都能承载相同长度的网络层分组。例如，以太网帧能够承载不超过1500字节的数据，而某些广域网链路的帧可承载不超过576字节的数据。一个链路层帧能承载的最大数据量叫作**最大传送单元**（Maximum Transmission Unit, MTU）   
+
+为坚持网络内核保持简单的原则，IPv4的设计者决定将数据报的重新组装工作放到端系统中，而不是放到网络路由器中。   
+
+利用ip报文中的标识、标志和片偏移字段实现分片。   
+
+<img width="572" alt="image" src="https://github.com/user-attachments/assets/dd324212-39b4-464f-9fc7-8357c6063b53">
 
 
 
