@@ -756,7 +756,16 @@ IP和TCP的扩展方案［RFC 3168］已经提出并已经实现和部署，该�
 当路由内存不够：要么丢弃到达的分组（采用一种称为**弃尾**（drop tail）的策略），要么删除一个或多个已排队的分组为新来的分组腾出空间。在某些情况下，在缓存填满之前便丢弃一个分组（或在其首部加上标记）的做法是有利的，这可以向发送方提供一个拥塞信号。
 <img width="535" alt="image" src="https://github.com/user-attachments/assets/b7ff680f-a977-40c0-9f88-7b2211f4b1e7">
 
- 
+### 4.2.5 分组调度
+1. 先进先出
+<img width="400" alt="image" src="https://github.com/user-attachments/assets/72e09c8a-822c-45f1-84aa-892de8e0f117">
+
+3. 优先权排队
+<img width="400" alt="image" src="https://github.com/user-attachments/assets/51fc6b74-0fc5-45d3-a5f1-27f97e070e36">
+
+5. 循环和加权公平排队
+<img width="400" alt="image" src="https://github.com/user-attachments/assets/9fd5cc11-257d-479e-85d4-5a91e11c4753">
+
 
 
 
