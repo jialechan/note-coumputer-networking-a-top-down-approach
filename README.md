@@ -746,6 +746,18 @@ IP和TCP的扩展方案［RFC 3168］已经提出并已经实现和部署，该�
 
 ![image](https://github.com/user-attachments/assets/460ff4c8-fd72-4a5b-aa47-a21dca828bd3)
 
+### 4.2.4 何处出现排队
+当路由无内存可用于存储到达的分组时将会出现**丢包**（packet loss）。   
+
+1. 输入排队：下图叫作输入排队交换机中的**线路前部**（Head-Of-the-Line, HOL）**阻塞**   
+<img width="552" alt="image" src="https://github.com/user-attachments/assets/5a03454d-864b-43f4-a856-c376bd5cc0b0">
+
+2. 输出排队
+当路由内存不够：要么丢弃到达的分组（采用一种称为**弃尾**（drop tail）的策略），要么删除一个或多个已排队的分组为新来的分组腾出空间。在某些情况下，在缓存填满之前便丢弃一个分组（或在其首部加上标记）的做法是有利的，这可以向发送方提供一个拥塞信号。
+<img width="535" alt="image" src="https://github.com/user-attachments/assets/b7ff680f-a977-40c0-9f88-7b2211f4b1e7">
+
+ 
+
 
 
 
