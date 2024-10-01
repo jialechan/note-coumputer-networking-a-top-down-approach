@@ -791,5 +791,11 @@ IPv4数据报中的关键字段如下：
 
 <img width="572" alt="image" src="https://github.com/user-attachments/assets/dd324212-39b4-464f-9fc7-8357c6063b53">
 
+### 4.3.3 IPv4 编址
+主机与物理链路之间的边界叫作**接口**（interface）。从技术上讲，一个IP地址与一个接口相关联，而不是与包括该接口的主机或路由器相关联。     
+
+<img width="450" alt="image" src="https://github.com/user-attachments/assets/3ad8b709-7235-4d14-9962-0f81f27a6b21">   
+
+<img width="450" alt="image" src="https://github.com/user-attachments/assets/a3dca95f-85dc-413e-8d46-236ad68c29a1">   
 
 
