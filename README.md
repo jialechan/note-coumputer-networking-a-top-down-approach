@@ -891,7 +891,21 @@ IPv6中定义的字段:
 * 在**负载敏感算法**（load-sensitive algorithm）中，链路开销会动态地变化以反映出底层链路的当前拥塞水平。如果当前拥塞的一条链路与高开销相联系，则路由选择算法趋向于绕开该拥塞链路来选择路由。
 * 当今的因特网路由选择算法（如RIP、OSPF和BGP）都是**负载迟钝**的（load-insensitive）,因为某条链路的开销不明确地反映其当前（或最近）的拥塞水平。
 
+### 5.2.1 链路状态路由选择算法
+我们定义下列记号:
+* D(v）: 到算法的本次迭代，从源节点到目的节点。的最低开销路径的开销。
+* p(v): 从源到v沿着当前最低开销路径的前一节点(v的邻居）。
+* N': 节点子集；如果从源到。的最低开销路径已确知，v在N'中。
 
+LS算法最差情况下复杂性为O(n^2）
+
+<img width="800" alt="image" src="https://github.com/user-attachments/assets/fdc57c58-4226-4dc3-8580-c64420b79e61">   
+
+<img width="739" alt="image" src="https://github.com/user-attachments/assets/47d6f3ef-a2b4-4e15-9f90-5ae922ad1280">
+
+### 5.2.2 距离向量路由选择算法
+
+<img width="501" alt="image" src="https://github.com/user-attachments/assets/3937b815-5c45-4290-a0f3-a1e1fef91d70">
 
 
 
