@@ -938,4 +938,4 @@ LS与DV路由选择算法的比较:
 如图5-12所示，在IP任播配置阶段，CDN公司为它的多台服务器指派相同的IP地址，并且使用标准的BGP从这些服务器的每台来通告该IP地址。    
 <img width="500" alt="image" src="https://github.com/user-attachments/assets/7dd08453-2a3d-4840-8c61-a1329c350cea">
 
-
+### 5.4.5 路由选择策略
