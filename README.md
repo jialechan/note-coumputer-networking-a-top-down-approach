@@ -1037,6 +1037,10 @@ ICMP通常被认为是IP的一部分，但从体系结构上讲它位于IP之上
 单比特奇偶校验方案的二维一般化方案：    
 <img width="450" alt="image" src="https://github.com/user-attachments/assets/aa194718-8c21-41c1-90b7-3466e930b444">
 
+### 6.2.2 检验和方法
+具体参考“UDP检验和”章节   
 
+### 6.2.3 循环冗余检测
+现今的计算机网络中广泛应用的差错检测技术基于循环冗余检测（Cyclic Redundancy Check, CRC）编码。算法比较复杂，使用硬件计算。
 
 
