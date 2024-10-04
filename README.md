@@ -1043,4 +1043,19 @@ ICMP通常被认为是IP的一部分，但从体系结构上讲它位于IP之上
 ### 6.2.3 循环冗余检测
 现今的计算机网络中广泛应用的差错检测技术基于循环冗余检测（Cyclic Redundancy Check, CRC）编码。算法比较复杂，使用硬件计算。
 
+## 6.3 多路访问链路和协议
+了有两种类型的网络链路：
+* 点对点链路: (如点对点协议(point-to-point protocol, PPP)和高级数据链路控制(high・level data link control, HDLC)
+* 广播链路: 以太网和无线局域网是广播链路层技术的例子
+
+我们能够将任何多路访问协议划分为3种类型之一：
+* 信道划分协议（channel partitioning protocol）
+* 随机接入协议 random access protocol）
+* 轮流协议（taking-turns protocol）
+
+### 6.3.1 信道划分协议
+**时分多路复用**（TDM）和**频分多路复用**（FDM）是两种能够用于在所有共享信道节点之间划分广播信道带宽的技术。他们优点是消除了碰撞而且非常公平；缺点是节点被限制于R/N bps的平均速率，节点必须总是等待它在传输序列中的轮次。   
+
+是码分多址 Code Division Multiple Access, CDMA）编码类似于TDM中的时隙和FDM中的频率，能分配给多路访问信道的用户。第七章再介绍
+
 
