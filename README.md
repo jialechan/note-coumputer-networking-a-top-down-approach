@@ -1103,6 +1103,11 @@ ICMP通常被认为是IP的一部分，但从体系结构上讲它位于IP之上
 ### 6.3.4 DOCSIS 用于电缆因特网接入的链路层协议
 <img width="686" alt="image" src="https://github.com/user-attachments/assets/006becbf-f633-4545-9ca5-84d1d69f9052">
 
+### 6.4 交换局域网
+1. **MAC地址**：每个适配器（即网络接口）都有一个固定的MAC地址，MAC地址理论上没有重复的。
+2. **地址解析协议**（Address Resolution Protocol, ARP）：ARP有点像DNS, 任务是将IP地址翻译为MAC地址，做法是把ARP查询报文广播到子网，匹配的主机会回答自己的IP对应的MAC地址；
+3. **发送数据报到子网以外**：如果跨了子网，目的地MAC应该填的是路由的入MAC地址，如下图:
+   <img width="700" alt="image" src="https://github.com/user-attachments/assets/3ce147f2-45e6-4aa7-af9c-4e96e4e2d671">
 
 
 
