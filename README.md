@@ -1079,7 +1079,7 @@ ICMP通常被认为是IP的一部分，但从体系结构上讲它位于IP之上
    说的过程不会听，所以一直会把话说下去
 
 5. 具有碰撞检测的载波侦听多路访问（CSMA/CD）
-   如果与他人同时开始说话，停止说话。在网络领域中，这被称为**碰撞检测**(collision detection)    
+   如果与他人同时开始说话，停止说话。在网络领域中，这被称为**碰撞检测**(collision detection) 。当碰撞发生时，使用**二进制指数后退**（binary exponential backoff）算法确定等待时间。   
    <img width="300" alt="image" src="https://github.com/user-attachments/assets/11bb2101-7963-4d60-8b59-99c7b3f34890">      
 
 6. CSMA/CD 效率
@@ -1100,7 +1100,9 @@ ICMP通常被认为是IP的一部分，但从体系结构上讲它位于IP之上
 3. **令牌传递协议**（token-passing protocol）：在这种协议中没有主节点。一个称为令牌（token）的小的特殊帧在节点之间以某种固定的次序进行交换。当节点有令牌且有东西要发送的时候就持有令牌，发送一定数量后节点就把令牌传给被人   
    缺点：某节点故障导致令牌没有释放不能传给别人
 
-   
+### 6.3.4 DOCSIS 用于电缆因特网接入的链路层协议
+<img width="686" alt="image" src="https://github.com/user-attachments/assets/006becbf-f633-4545-9ca5-84d1d69f9052">
+
 
 
 
