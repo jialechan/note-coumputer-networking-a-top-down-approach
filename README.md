@@ -1158,5 +1158,27 @@ ICMP通常被认为是IP的一部分，但从体系结构上讲它位于IP之上
 ### 6.4.4 虚拟局域网
 持虚拟局域网（Virtula Local Network, VLAN）。支持VLAN的交换机允许经一个单一的物理局域网基础设施定义多个虚拟局域网。
 
+## 6.5 链路虚拟化：网络作为链路层
+多协议标签交换（Multiprotocol Label Switching, MPLS）：我们关于MPLS的讨论重点基于这样的事实，MPLS基于标签执行交换, 而不必考虑分组的IP地址。
+
+## 6.6 数据中心网络
+<img width="600" alt="image" src="https://github.com/user-attachments/assets/f41752a5-c882-44b8-833c-13a860b12b49">   
+
+1. 负载均衡：负载均衡器不仅平衡主机间的工作负载，而且还提供类似NAT的功能
+2. 等级体系结构：主要是为了解决数据中心规模过大的问题；分等级后可能会带来跨等级的性能问题。
+3. 数据中心网络的发展趋势
+   * 全连接拓扑（fully connected topology）来替代交换机和路由器的等级结构能克服跨等级带来的性能问题   
+     <img width="600" alt="image" src="https://github.com/user-attachments/assets/0ee2efba-4ac8-4217-8851-b2dfe01a5e37">
+   * 用基于船运集装箱的模块化数据中心（Modular Data Center, MDC）
+   * 大型云提供商正在其数据中心越来越多地建造或定制几乎所有东西，包括网络适配器、交换机路由器、TOR 软件和网络协议
+
+
+
+
+
+
+
+
+
 
 
