@@ -1173,6 +1173,9 @@ ICMP通常被认为是IP的一部分，但从体系结构上讲它位于IP之上
    * 大型云提供商正在其数据中心越来越多地建造或定制几乎所有东西，包括网络适配器、交换机路由器、TOR 软件和网络协议
 
 
+## 6.7 回顾: Web页面请求的历程
+<img width="700" alt="image" src="https://github.com/user-attachments/assets/7672b327-46e4-49e7-8c2e-00a7f6a1ece4">   
+
 
 
 
