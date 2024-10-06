@@ -1155,7 +1155,8 @@ ICMP通常被认为是IP的一部分，但从体系结构上讲它位于IP之上
            
    <img width="400" alt="image" src="https://github.com/user-attachments/assets/4e6a626e-9bbe-487f-b97e-480db83b18ed">
 
-   
+### 6.4.4 虚拟局域网
+持虚拟局域网（Virtula Local Network, VLAN）。支持VLAN的交换机允许经一个单一的物理局域网基础设施定义多个虚拟局域网。
 
 
 
