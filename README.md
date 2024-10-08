@@ -1259,7 +1259,42 @@ CDMA
 <img width="550" alt="image" src="https://github.com/user-attachments/assets/52209bd0-76bb-4946-a71a-b28b58860b89">  
 
 
+## 7.3 WiFi 802.11无线LAN
+<img width="300" alt="image" src="https://github.com/user-attachments/assets/154efb31-3c0d-42c8-b747-1f4844ebdd9f">  
+
+### 7.3.1 802.11体系结构
+802.11体系结构的基本构件模块是**基本服务集**（Basic Service Set, BSS）。一个BSS包含一个或多个无线站点和一个在802.11术语中称为**接入点**（Access Point, AP）的中央基站（base station）。   
+
+<img width="300" alt="image" src="https://github.com/user-attachments/assets/a5e94994-db68-4db3-9e52-83667d50e09d">     
+
+信道与关联   
+802.11定义了11个部分重叠的信道。当且仅当两个信道由4个或更多信道隔开时它们才无重叠。特别是信道1、6和11的集合是唯一的3个非重叠信道的集合。
+
+<img width="450" alt="image" src="https://github.com/user-attachments/assets/055e5ca8-7ed4-4c31-8b26-943eddd7f0e0"> 
+
+### 7.3.2 802.11 MAC协议
+802.11无线LAN选择了一种随机访问协议。这个随机访问协议称作**带碰撞避免的CSMA**（ CSMA with collision avoidance）,或简称为CSMA/CAO与以太网的CSMA/CD相似，CSMA/CA中的“CSMA”代表“载波侦听多路访问”，意味着每个站点在传输之前侦听信道，并且一旦侦听到该信道忙则抑制传输。尽管以太网
+和802. 11都使用载波侦听随机接入，但这两种MAC协议有重要的区别。首先，802.11使用碰撞避免而非碰撞检测。其次，由于无线信道相对较高的误比特率，802.11 （不同于以太网）使用链路层确认/重传（ARQ）方案。   
+
+802.11 MAC协议并未实现碰撞检测。这主要由两个重要的原因所致:
+* 检测碰撞的能力要求站点具有同时发送（站点自己的信号）和接收（检测其他站点是否也在发送）的能力。因为在802. 11适配器上，接收信号的强度通常远远小于发送信号的强度，制造具有检测碰撞能力的硬件代价较大。
+* 更重要的是，即使适配器可以同时发送和监听信号（并且假设它一旦侦听到信道忙就放弃发送），适配器也会由于隐藏终端问题和衰减问题而无法检测到所有的碰撞。
+
+802.11的**链路层确认**(link-layeracknowledgment）方案: 目的站点收到一个通过CRC校验的帧后，它等待一个被称作**短帧间间隔**（Short Inter-Frame Spacing, SIFS）的一小段时间，然后发回一个确认帧。如果发送站点在给定的时间内未收到确认帧，它假定出现了错误并重传该帧，使用CSMA/CA协议访问该信道。如果在若干固定次重传后仍未收到确认，发送站点将放弃发送并**丢弃**该帧。   
+
+<img width="350" alt="image" src="https://github.com/user-attachments/assets/8291ceeb-b1d9-4dac-ab00-6c088e094fe3">      
 
 
+**CSMA/CA协议**：
+1. 如果某站点最初监听到信道空闲，它将在一个被称作**分布式帧间间隔**（Distributed Inter-Frame Space, DIFS）的短时间段后发送该帧
+2. 否则，该站点选取一个随机回退值（如我们在6.3.2节中遇到的那样）并且在侦听信道空闲时递减该值。当侦听到信道忙时，计数值保持不变
+3. 当计数值减为0时（注意到这只可能发生在信道被侦听为空闲时），该站点发送整个数据帧并等待确认。
+4. 如果收到确认，发送站点知道它的帧已被目的站正确接收了。如果该站点要发送另一帧，它将从第二步开始CSMA/CA协议。如果未收到确认，发送站点将重新进入第二步中的回退阶段，并从一个更大的范围内选取随机值。
 
+802.11的目标是无论如何尽可能避免碰撞。   
+
+**处理隐藏终端：RTS和CTS**  
+IEEE 802.11协议允许站点使用一个**短请求发送**(Request to Send, RTS)控制帧和一个**短允许发送**(Clear to Send, CTS)控制帧来**预约**对信道的访问。   
+
+<img width="450" alt="image" src="https://github.com/user-attachments/assets/d6c9c4d1-6e8b-4ead-a3ae-f0558b0c60a1">  
 
