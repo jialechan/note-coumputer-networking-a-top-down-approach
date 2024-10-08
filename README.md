@@ -1265,12 +1265,12 @@ CDMA
 ### 7.3.1 802.11体系结构
 802.11体系结构的基本构件模块是**基本服务集**（Basic Service Set, BSS）。一个BSS包含一个或多个无线站点和一个在802.11术语中称为**接入点**（Access Point, AP）的中央基站（base station）。   
 
-<img width="300" alt="image" src="https://github.com/user-attachments/assets/a5e94994-db68-4db3-9e52-83667d50e09d">     
+<img width="550" alt="image" src="https://github.com/user-attachments/assets/a5e94994-db68-4db3-9e52-83667d50e09d">     
 
 信道与关联   
 802.11定义了11个部分重叠的信道。当且仅当两个信道由4个或更多信道隔开时它们才无重叠。特别是信道1、6和11的集合是唯一的3个非重叠信道的集合。
 
-<img width="450" alt="image" src="https://github.com/user-attachments/assets/055e5ca8-7ed4-4c31-8b26-943eddd7f0e0"> 
+<img width="550" alt="image" src="https://github.com/user-attachments/assets/055e5ca8-7ed4-4c31-8b26-943eddd7f0e0"> 
 
 ### 7.3.2 802.11 MAC协议
 802.11无线LAN选择了一种随机访问协议。这个随机访问协议称作**带碰撞避免的CSMA**（ CSMA with collision avoidance）,或简称为CSMA/CAO与以太网的CSMA/CD相似，CSMA/CA中的“CSMA”代表“载波侦听多路访问”，意味着每个站点在传输之前侦听信道，并且一旦侦听到该信道忙则抑制传输。尽管以太网
