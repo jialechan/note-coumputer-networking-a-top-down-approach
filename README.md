@@ -1347,8 +1347,8 @@ IEEE 802.11协议允许站点使用一个**短请求发送**(Request to Send, RT
 略
 
 ### 7.4.3 走向 4G LTE
-1. 4G系统体系结构：一个全IP核心网
-   ![image](https://github.com/user-attachments/assets/05f2a2e8-86d6-4050-b767-688d52fbc991
+1. 4G系统体系结构：一个全IP核心网   
+   ![image](https://github.com/user-attachments/assets/05f2a2e8-86d6-4050-b767-688d52fbc991)
    * 一种统一的、全IP网络体系结构。4G体系结构是“全IP的”，即语音和数据都承载在IP数据报中，来自/去往无线设备(用户设备，4G的术语为UE）,到分组网关 P GW） ——该P GW将4G边缘网络连接到网络的其他部分。
    * 4G数据平面与4G控制平面的清晰分离。
    * 无线电接入网与全IP核心网之间的清晰分离。
