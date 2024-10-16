@@ -1430,10 +1430,10 @@ IEEE 802.11协议允许站点使用一个**短请求发送**(Request to Send, RT
 ### 8.3.1 密码散列函数
 **密码散列函数**（cryptographic hash function）要求具有下列附加的性质：找到任意两个不同的报文咒和y使得H(x)=H(y), 在计算上是不可能的。散列算法有md5(不安全)，SHA-1（推荐）。
 
-## 8.3.2 报文鉴别码(Message Authentication Code, MAC)
+### 8.3.2 报文鉴别码(Message Authentication Code, MAC)
 ![image](https://github.com/user-attachments/assets/d4166324-4602-46e8-bdf7-bfc5df5fa6ad)
 
-## 8.3.3 数字签名
+### 8.3.3 数字签名
 ![image](https://github.com/user-attachments/assets/913555af-4211-41d0-b418-240e2228efba)   
 
 ![image](https://github.com/user-attachments/assets/8819cf7e-9ce9-477b-92ce-39a4ed82052b)
