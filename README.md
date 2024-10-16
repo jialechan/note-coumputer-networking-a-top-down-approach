@@ -1441,6 +1441,18 @@ IEEE 802.11协议允许站点使用一个**短请求发送**(Request to Send, RT
 **公钥认证**
 将公钥与特定实体绑定通常是由认证中心（Certification Authority, CA）完成的
 
+## 8.4 端点鉴别
+端点鉴别（end-point authentication）就是一个实体经过计算机网络向另一个实体证明其身份的过程：
+1. Alice向Bob发送报文“我是Alice”
+2. Bob选择一个不重数R, 然后把这个值发送给Alice
+3. Alice使用她与Bob共享的对称秘密密钥来加密这个不重数，然后把加密的不重数Ka-b(R)发回给Bob 由于Alice知道秘钥并用它加密一个值，就使得Bob知道收到的报文是由Alice产生的。这个不重数用于确定Alice是活跃的。
+4. Bob解密接收到的报文。如果解密得到的不重数等于他发送给Alice的那个不重数，则可鉴别Alice的身份。
+
+![image](https://github.com/user-attachments/assets/f48c8ad3-c931-432c-99df-13c70d93d925)
+
+## 8.5 安全电子邮件
+### 8.5.1 安全电子邮件
+![image](https://github.com/user-attachments/assets/f7b54663-12f8-4d42-ba87-697ff890d831)
 
 
 
