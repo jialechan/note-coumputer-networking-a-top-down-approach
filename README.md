@@ -1431,6 +1431,7 @@ IEEE 802.11协议允许站点使用一个**短请求发送**(Request to Send, RT
 **密码散列函数**（cryptographic hash function）要求具有下列附加的性质：找到任意两个不同的报文咒和y使得H(x)=H(y), 在计算上是不可能的。散列算法有md5(不安全)，SHA-1（推荐）。
 
 ### 8.3.2 报文鉴别码(Message Authentication Code, MAC)
+Alice生成报文m,用s级联m以生成m+s,并计算散列H(m+s) (例如使用SHA-1)。H(m + s)被称为**报文鉴别码**(Message Authentication Code, MAC)       
 ![image](https://github.com/user-attachments/assets/d4166324-4602-46e8-bdf7-bfc5df5fa6ad)
 
 ### 8.3.3 数字签名
@@ -1454,5 +1455,12 @@ IEEE 802.11协议允许站点使用一个**短请求发送**(Request to Send, RT
 ### 8.5.1 安全电子邮件
 ![image](https://github.com/user-attachments/assets/f7b54663-12f8-4d42-ba87-697ff890d831)
 
-
+## 8.6 使TCP连接安全：SSL
+SSL握手的步骤如下：
+1. 客户发送它支持的密码算法的列表，连同一个客户的不重数。
+2. 从该列表中，服务器选择一种对称算法（例如AES） 一种公钥算法（例如具有特定密钥长度的RSA）和一种MAC算法。它把它的选择以及证书和一个服务器不重数返回给客户。
+3. 客户验证该证书，提取服务器的公钥，生成一个前主密钥（Pe Master Secret, PMS）,用服务器的公钥加密该PMS,并将加密的PMS发送给服务器。
+4. 使用相同的密钥导岀函数（就像SSL标准定义的那样），客户和服务器独立地从PMS和不重数中计算出主密钥（Master Secret, MS）。然后该MS被切片以生成两个密码和两个MAC密钥。此外，当选择的对称密码应用于CBC （例如3DES或AES）,则两个初始化向量（Initialization Vector, IV）也从该MS获得，这两个IV分别用于该连接的两端。自此以后，客户和服务器之间发送的所有报文均被加密和鉴别（使用MAC）
+5. 客户发送所有握手报文的一个MAC
+6. 服务器发送所有握手报文的一个MAC
 
