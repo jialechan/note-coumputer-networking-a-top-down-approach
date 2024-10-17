@@ -1464,3 +1464,12 @@ SSL握手的步骤如下：
 5. 客户发送所有握手报文的一个MAC
 6. 服务器发送所有握手报文的一个MAC
 
+## 8.7 网络层安全性：IPsec和虚拟专用网
+![image](https://github.com/user-attachments/assets/7434f032-7561-4c6e-a6d4-bc62214c3418)   
+
+在IPsec协议族中，主要的是封装安全性载荷（Encapsulation Security Payload, ESP）协议。    
+
+IPsec数据报在网络实体对之间发送，例如两台主机之间、两台路由器之间或一台主机和一台路由器之间。在从源实体向目的实体发送IPsec数据报之前，源和目的实体创建了一个网络层的逻辑连接。这个逻辑连接称为安全关联（Security Association, SA），一个SA是一个单工逻辑连接；   
+
+IPsec主要分组形式是一种用于所谓**隧道模式**（tunnel mode ）
+
